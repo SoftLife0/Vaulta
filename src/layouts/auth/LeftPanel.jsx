@@ -3,28 +3,36 @@ import logo from "../../assets/images/logo.png";
 
 const LeftPanel = () => (
   <div className="login-left">
-    <div>
-      <Link to="/" className="d-flex align-items-center">
-        <img src={logo} alt="logo" style={{width:130}} loading="eager" />
-      </Link>
-    </div>
+    <div className="login-description d-flex flex-column justify-content-end align-items-center h-100" style={{maxWidth: "400px", margin: "0 auto", paddingBottom: "60px"}}>
+      <div className="text-center mb-4">
+        <Link to="/" className="d-flex align-items-center justify-content-center">
+          <img src={logo} alt="logo" style={{width:130}} loading="eager" />
+        </Link>
+      </div>
 
-    <div className="login-description">
-        <h2 className="login-title mb-4">“The Trust Layer for the Tokenized Financial Future”</h2>
+      <div>
+        <h2 className="login-title mb-3">Get Started with Us</h2>
+        <p className="login-subtitle mb-5">Complete these easy steps to register <br /> your account.</p>
+      </div>
 
-        <div className="d-flex justify-content-end align-items-center gap-3 mt-3">
-            <div className="login-arrow" style={{border: "2px solid white",}}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-            </div>
 
-            <div className="login-arrow" style={{backgroundColor: "#FFA006"}}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-            </div>
-        </div>      
+      <div className="d-flex flex-column align-items-center" style={{gap: "16px", width: "100%"}}>
+        <div className="login-step-card-active">
+          <small className="auth-card-number-active">1</small>
+          <h6 className="auth-card-text-active">Provide your email</h6>
+        </div>
+
+        <div className="login-step-card">
+          <small className="auth-card-number">2</small>
+          <h6 className="auth-card-text">Receive login email</h6>
+        </div>
+
+        <div className="login-step-card">
+          <small className="auth-card-number">3</small>
+          <h6 className="auth-card-text">Login with instant code</h6>
+        </div>
+      </div>
+      
     </div>
   </div>
 );

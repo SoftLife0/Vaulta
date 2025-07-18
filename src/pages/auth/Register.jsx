@@ -61,44 +61,47 @@ const Register = () => {
         <div className="login-wrapper">
             <LeftPanel />
 
-            <RightPanel title="Let's get you set up with a new account. Guaranteed." subTitle="Enter your credentials to access your account">
+            <RightPanel title="Let’s get you set up with a new account." subTitle="Enter your account details">
                 <form onSubmit={handleRegister}>
-                    <div className="mb-3">
-                        <label className="input-label">First Name</label>
-                        <input className="input-field" value={formData.first_name} onChange={(e) => handleInputChange('first_name', e.target.value)} placeholder="John" type="text" required />
+
+                    <button type="submit" className="vulta-button w-100 my-3 d-flex align-items-center justify-content-center" style={{background: '#fff', color: '#000', border: '1px solid #EDEDED'}}>
+                        <img src="https://www.google.com/favicon.ico" alt="Google" className="me-2" style={{width: '16px', height: '16px'}} />
+                        Google
+                    </button>
+                    
+                    <div className="flex items-center mb-4">
+                        <hr className="flex-grow border-t border-[#EDEDED]" />
+                        <span className="px-3 text-black text-sm">or</span>
+                        <hr className="flex-grow border-t border-[#EDEDED]" />
                     </div>
 
-                    <div className="mb-3">
-                        <label className="input-label">Last Name</label>
-                        <input className="input-field" value={formData.last_name} onChange={(e) => handleInputChange('last_name', e.target.value)} placeholder="Cole" type="text" required />
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="mb-3">
+                                <label className="input-label">First Name</label>
+                                <input className="input-field" value={formData.first_name} onChange={(e) => handleInputChange('first_name', e.target.value)} placeholder="eg. Trusty" type="text" required />
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="mb-3">
+                                <label className="input-label">Last Name</label>
+                                <input className="input-field" value={formData.last_name} onChange={(e) => handleInputChange('last_name', e.target.value)} placeholder="eg. Cole" type="text" required />
+                            </div>
+                        </div>
                     </div>
 
                     <div className="mb-3">
                         <label className="input-label">Email</label>
-                        <input className="input-field" value={formData.email} onChange={(e) => handleInputChange('email', e.target.value)} placeholder="johncole@gmail.com" type="email" required />
+                        <input className="input-field" value={formData.email} onChange={(e) => handleInputChange('email', e.target.value)} placeholder="eg. trustycole@vaulta.com" type="email" required />
                     </div>
 
-                    <div className="mb-3">
-                        <label className="input-label">Phone</label>
-                        <input className="input-field" value={formData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} placeholder="+233" type="text" required />
-                    </div>
-
-                    <div className="mb-3">
-                        <label className="input-label">Password</label>
-                        <input className="input-field" value={formData.password} onChange={(e) => handleInputChange('password', e.target.value)} placeholder="***************" type="password" required />
-                    </div>
-
-                    <div className="mb-3">
-                        <label className="input-label">Confirm Password</label>
-                        <input className="input-field" value={formData.confirmPassword} onChange={(e) => handleInputChange('confirmPassword', e.target.value)} placeholder="***************" type="password" required />
-                    </div>
-
-                    <div className="mb-3">
+                
+                    {/* <div className="mb-3">
                         <div className="form-check">
                             <input className="form-check-input sm" type="checkbox" id="terms" style={{ backgroundColor: 'black', borderColor: 'white' }} required />
                             <label className="input-login-text">I agree to <span style={{ textDecoration: "underline" }}>terms & privacy</span></label>
                         </div>
-                    </div>
+                    </div> */}
 
                     {error && <div className="alert alert-danger">{error}</div>}
 
@@ -108,12 +111,12 @@ const Register = () => {
                             <div className="spinner-border spinner-border-sm me-2" role="status" />
                             Creating Account...
                         </>
-                        ) : "Create Account"}
+                        ) : "Sign Up"}
                     </button>
 
                     <div className="text-center mt-3">
                         <small className="input-login-text">
-                            Already Have an Account? <Link to="/" className="input-login-other-text">Login</Link>
+                            Already Have an Account? <Link to="/" className="input-login-other-text">Log in</Link>
                         </small>
                     </div>
                 </form>
